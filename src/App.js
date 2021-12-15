@@ -2,9 +2,15 @@ import './App.css';
 import Header from './Mycomponents/Header';
 import { Footer } from './Mycomponents/Footer';
 import { Todos } from './Mycomponents/Todos';
+import React, { useState } from 'react';
 
 function App() {
-  let todos = [
+  const ondelete= (todo) => {
+    setTodos(todos.filter((e)=>{
+      return e!==todo
+    }));
+  }
+  const [todos, setTodos] = useState([
     {
       srno : 1,
       title : 'Go to the store',
@@ -20,11 +26,11 @@ function App() {
       title : 'Go to CCD',
       description: 'Buy Latte'
     }
-  ]
+  ])
   return (
     <>
       <Header/>
-      <Todos todos={todos}/>
+      <Todos todos={todos} ondelete={ondelete}/>
       <Footer/>
     </>
   );
