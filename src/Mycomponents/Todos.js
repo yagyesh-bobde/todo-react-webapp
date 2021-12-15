@@ -4,12 +4,15 @@ import { Task } from '../Mycomponents/Task'
 export const Todos = (props) => {
     return (
         <div >
-            <h3>Good Morning Yagyesh,</h3>
             <div className='container'>
             <h5>Your Tasks</h5>
             {props.todos.length===0? 'No Tasks' : 
             props.todos.map((todo)=>{
-                return <Task todo={todo} key={todo.srno} ondelete={props.ondelete}/>
+                return (<>
+                <Task todo={todo} key={todo.srno} ondelete={props.ondelete}/>
+                <hr/>
+                </>
+                )
             })}
             </div>
         </div>
