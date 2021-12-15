@@ -1,7 +1,7 @@
-# Getting Started with Create React App
-
+# Getting Started 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+1. npx create-react-app <name>
+2. In index.html include the bootstrap from started template in the bootstrap doc
 ## Available Scripts
 
 In the project directory, you can run:
