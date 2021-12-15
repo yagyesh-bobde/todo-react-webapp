@@ -3,6 +3,7 @@ import Header from './Mycomponents/Header';
 import { Footer } from './Mycomponents/Footer';
 import { Todos } from './Mycomponents/Todos';
 import React, { useState } from 'react';
+import { AddTodo } from './Mycomponents/AddTodo';
 
 function App() {
   const ondelete= (todo) => {
@@ -30,6 +31,7 @@ function App() {
   return (
     <>
       <Header/>
+      <AddTodo></AddTodo>
       <Todos todos={todos} ondelete={ondelete}/>
       <Footer/>
     </>
