@@ -16,7 +16,13 @@ function App() {
   }
 
   const addTodo = (title , desc) => {
-    let sno = todos[todos.length - 1].sno +1
+    let sno;
+    if (todos.length===0) {
+       sno = 1
+    }
+    else {
+       sno = todos[todos.length - 1].sno +1
+    }
     const newTodo = {
       sno : sno,
       title: title,
