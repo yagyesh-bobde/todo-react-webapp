@@ -3,9 +3,19 @@ import './App.css';
 import Header from "./MyComponents/Header";
 import { Todos } from "./MyComponents/Todos";
 import { Footer } from "./MyComponents/Footer";
+import React, { useState } from 'react';
+
+
+
 function App() {
-  let todos = [
-    {
+  const onDelete = (todo) => {
+    setTodos(todos.filter((e)=>{
+      return e!==todo;
+    }))
+  }
+
+  const [todos, setTodos] = useState(
+    [{
     sno:1 ,
     title: 'Go to the mall',
     desc: 'in the Mall buy this stuff'
@@ -19,12 +29,12 @@ function App() {
     sno:3 ,
     title: 'Go to the shop',
     desc: 'in the shop buy this stuff'
-  }
-]
+  }]
+  )
   return (
    <>
     <Header title="My Todos List"/>
-    <Todos todos = {todos}/>
+    <Todos todos = {todos} onDelete={onDelete}/>
     <Footer/>
    </>
   );
